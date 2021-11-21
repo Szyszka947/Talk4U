@@ -1,0 +1,52 @@
+.container {
+  display: grid;
+  grid-template-columns: 1.2fr;
+  grid-template-rows: 1.2fr 0.8fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "peer-view"
+    "call-settings";
+  height: 100%;
+  width: 100%;
+}
+
+.call-settings {
+  grid-area: call-settings;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.peer-view {
+  grid-area: peer-view;
+}
+
+.peer-cam {
+  width: 50%;
+  height: 100%;
+  max-height: 600px;
+  float: left;
+  box-sizing: border-box;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+.video {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  max-height: 600px;
+  box-sizing: border-box;
+}
+
+@media(orientation: portrait) {
+  .my-peer-cam {
+    display: none;
+  }
+
+  .peer-cam {
+    width: 100%;
+  }
+}

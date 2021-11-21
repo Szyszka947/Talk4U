@@ -1,0 +1,10 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Windows\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Windows\\.nuget\\packages",
+      "F:\\ZestawySDK\\NuGetPackages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ]
+  }
+}

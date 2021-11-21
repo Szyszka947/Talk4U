@@ -1,0 +1,23 @@
+form {
+  text-align: center;
+}
+
+.form-input {
+  color: white;
+}
+
+a {
+  color: #49A3FF;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #424242 inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.mat-form-field {
+  padding: 3%;
+}

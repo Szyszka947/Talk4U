@@ -1,0 +1,43 @@
+<app-form-layout>
+  <form [formGroup]="signUpForm" (ngSubmit)="signUpUser();">
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput type="text" class="form-input" formControlName="UserName" />
+      <span matPrefix><mat-icon color="primary">person</mat-icon>&nbsp;</span>
+      <mat-error>{{getErrorsFromFormControl('UserName')}}</mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>E-mail</mat-label>
+      <input matInput type="email" class="form-input" formControlName="Email" />
+      <span matPrefix><mat-icon color="primary">email</mat-icon>&nbsp;</span>
+      <mat-error>{{getErrorsFromFormControl('Email')}}</mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" class="form-input" formControlName="Password" />
+      <span matPrefix><mat-icon color="primary">lock</mat-icon>&nbsp;</span>
+      <mat-error>{{getErrorsFromFormControl('Password')}}</mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Repeat password</mat-label>
+      <input matInput type="password" class="form-input" formControlName="RepeatPassword" />
+      <span matPrefix><mat-icon color="primary">lock</mat-icon>&nbsp;</span>
+      <mat-error>{{getErrorsFromFormControl('RepeatPassword')}}</mat-error>
+    </mat-form-field>
+    <br />
+    <button type="submit" mat-raised-button color="accent" [disabled]="signUpForm.invalid || loading">
+      <ng-container *ngIf="loading; then loadingGif else loaded"></ng-container>
+    </button>
+    <br />
+    <a href="user/signin">Already have an account? Sign in now!</a>
+  </form>
+</app-form-layout>
+
+<ng-template #loadingGif>
+  <img src="../../../assets/gif/loading.gif" style="max-width: 30px;" />
+</ng-template>
+
+<ng-template #loaded>Sign up</ng-template>

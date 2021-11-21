@@ -1,0 +1,31 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$blue-palette: ( 50 : #e9f4ff, 100 : #c8e3ff, 200 : #a4d1ff, 300 : #80bfff, 400 : #64b1ff, 500 : #49a3ff, 600 : #429bff, 700 : #3991ff, 800 : #3188ff, 900 : #2177ff, A100 : #ffffff, A200 : #ffffff, A400 : #d0e1ff, A700 : #b7d1ff, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #000000, 500 : #000000, 600 : #000000, 700 : #000000, 800 : #ffffff, 900 : #ffffff, A100 : #000000, A200 : #000000, A400 : #000000, A700 : #000000, ) );
+
+$orange-palette: ( 50 : #fff1e0, 100 : #ffddb3, 200 : #ffc680, 300 : #ffaf4d, 400 : #ff9d26, 500 : #ff8c00, 600 : #ff8400, 700 : #ff7900, 800 : #ff6f00, 900 : #ff5c00, A100 : #ffffff, A200 : #fff6f2, A400 : #ffd2bf, A700 : #ffc0a6, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #000000, 400 : #000000, 500 : #000000, 600 : #000000, 700 : #000000, 800 : #000000, 900 : #000000, A100 : #000000, A200 : #000000, A400 : #000000, A700 : #000000, ) );
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Talk4U-primary: mat.define-palette(mat.$blue-palette, A200, A100, A400);
+$Talk4U-accent: mat.define-palette(mat.$orange-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Talk4U-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Talk4U-theme: mat.define-dark-theme(( color: ( primary: $Talk4U-primary, accent: $Talk4U-accent, warn: $Talk4U-warn, ) ));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Talk4U-theme);

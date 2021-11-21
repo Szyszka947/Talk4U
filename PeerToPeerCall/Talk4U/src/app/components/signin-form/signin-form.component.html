@@ -1,0 +1,29 @@
+<app-form-layout>
+  <form [formGroup]="signInForm" (ngSubmit)="signInUser();">
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput type="text" class="form-input" formControlName="UserName"/>
+      <span matPrefix><mat-icon color="primary">person</mat-icon>&nbsp;</span>
+      <mat-error>{{getErrorsFromFormControl('UserName')}}</mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" class="form-input" formControlName="Password"/>
+      <span matPrefix><mat-icon color="primary">lock</mat-icon>&nbsp;</span>
+      <mat-error>{{getErrorsFromFormControl('Password')}}</mat-error>
+    </mat-form-field>
+    <br />
+    <button type="submit" mat-raised-button color="accent" [disabled]="signInForm.invalid || loading">
+      <ng-container *ngIf="loading; then loadingGif else loaded"></ng-container>
+    </button>
+    <br />
+    <a href="user/signup">Don't have an account? Sign up now!</a>
+  </form>
+</app-form-layout>
+
+<ng-template #loadingGif>
+  <img src="../../../assets/gif/loading.gif" style="max-width: 30px;" />
+</ng-template>
+
+<ng-template #loaded>Sign in</ng-template>

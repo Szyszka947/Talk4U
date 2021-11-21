@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="peer-view">
+    <div class="peer-cam">
+      <video #targetPeerVideo class="video"></video>
+    </div>
+    <div class="peer-cam my-peer-cam">
+      <video #myVideo class="video"></video>
+    </div>
+  </div>
+  <div class="call-settings">
+    <button mat-raised-button (click)="nextPeer();" color="primary">Next talker</button>
+  </div>
+</div>
